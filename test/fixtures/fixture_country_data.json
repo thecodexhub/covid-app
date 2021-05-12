@@ -1,0 +1,14 @@
+{
+  "ID": "Text test",
+  "Country": "Text test",
+  "CountryCode": "test code",
+  "Slug": "Test country",
+  "NewConfirmed": 1,
+  "TotalConfirmed": 1,
+  "NewDeaths": 1,
+  "TotalDeaths": 1,
+  "NewRecovered": 1,
+  "TotalRecovered": 1,
+  "Date": "Text test",
+  "Premium": {}
+}
