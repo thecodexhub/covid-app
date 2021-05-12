@@ -7,7 +7,6 @@ linter:
     omit_local_variable_types: false
     unnecessary_this: false
     prefer_collection_literals: false
-    implicit-dynamic: ignore
 
 analyzer:
   exclude:
@@ -23,4 +22,3 @@ analyzer:
     missing_required_param: error
   strong-mode:
     implicit-casts: false
-    implicit-dynamic: false
