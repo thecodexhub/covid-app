@@ -1,5 +1,6 @@
-import 'package:covidapp/features/covid_case/domain/entities/covid_case.dart';
 import 'package:flutter/foundation.dart';
+
+import '../../domain/entities/covid_case.dart';
 
 class CovidCaseModel extends CovidCase {
   CovidCaseModel({
