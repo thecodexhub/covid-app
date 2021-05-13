@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  connectivity: ^3.0.3
   cupertino_icons: ^1.0.2
+  data_connection_checker: ^0.3.4
   # Functional programming thingies
   dartz: ^0.9.2
   # Value equality
