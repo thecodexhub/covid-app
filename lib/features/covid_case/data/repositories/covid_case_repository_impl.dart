@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../../../core/error/failure.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/covid_case.dart';
 import '../../domain/repositories/covid_case_repository.dart';
 import '../datasources/covid_case_local_data_source.dart';

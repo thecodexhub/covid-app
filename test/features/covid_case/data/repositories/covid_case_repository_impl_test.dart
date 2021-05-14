@@ -1,6 +1,6 @@
 import 'package:covidapp/core/error/exception.dart';
 import 'package:covidapp/core/error/failure.dart';
-import 'package:covidapp/core/platform/network_info.dart';
+import 'package:covidapp/core/network/network_info.dart';
 import 'package:covidapp/features/covid_case/data/datasources/covid_case_local_data_source.dart';
 import 'package:covidapp/features/covid_case/data/datasources/covid_case_remote_data_source.dart';
 import 'package:covidapp/features/covid_case/data/models/covid_case_model.dart';
