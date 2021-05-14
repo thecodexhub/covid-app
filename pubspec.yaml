@@ -23,6 +23,8 @@ dependencies:
   get_it: ^7.1.3
   # Remote API
   http: ^0.13.3
+  # Local cache
+  shared_preferences: ^2.0.5
 
 dev_dependencies:
   flutter_test:
