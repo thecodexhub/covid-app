@@ -1,0 +1,22 @@
+[
+  {
+    "Country": "Text test",
+    "NewConfirmed": 1,
+    "TotalConfirmed": 1,
+    "NewDeaths": 1,
+    "TotalDeaths": 1,
+    "NewRecovered": 1,
+    "TotalRecovered": 1,
+    "Date": "Text test"
+  },
+  {
+    "Country": "Text test",
+    "NewConfirmed": 1,
+    "TotalConfirmed": 1,
+    "NewDeaths": 1,
+    "TotalDeaths": 1,
+    "NewRecovered": 1,
+    "TotalRecovered": 1,
+    "Date": "Text test"
+  }
+]
