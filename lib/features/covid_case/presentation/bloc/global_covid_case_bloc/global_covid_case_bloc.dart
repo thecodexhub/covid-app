@@ -36,12 +36,23 @@ class GlobalCovidCaseBloc
       final result = await getGlobalCovidCase(NoParams());
       yield result.fold(
         (failure) => GlobalCovidCaseFailed(
-          message: failure is ServerFailure
-              ? SERVER_FAILURE_MESSAGE
-              : CACHE_FAILURE_MESSAGE,
+          message: failure.mapFailureToMessage,
         ),
         (covidCase) => GlobalCovidCaseLoaded(covidCase: covidCase),
       );
+    }
+  }
+}
+
+extension FailureX on Failure {
+  String get mapFailureToMessage {
+    switch (this.runtimeType) {
+      case ServerFailure:
+        return SERVER_FAILURE_MESSAGE;
+      case CacheFailure:
+        return CACHE_FAILURE_MESSAGE;
+      default:
+        return 'Unexpected error. Please try again.';
     }
   }
 }
