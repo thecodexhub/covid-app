@@ -6,3 +6,5 @@ abstract class CountryCovidCaseEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class GetCountryCovidCaseEvent extends CountryCovidCaseEvent {}
