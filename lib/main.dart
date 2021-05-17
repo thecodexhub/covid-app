@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:covidapp/injection.dart' as di;
 
-void main() {
+Future<void> main() async {
+  await di.init();
   runApp(MyApp());
 }
 
