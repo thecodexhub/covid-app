@@ -3,7 +3,6 @@ import 'package:covidapp/core/usecases/usecase.dart';
 import 'package:covidapp/features/covid_case/domain/entities/covid_case.dart';
 import 'package:covidapp/features/covid_case/domain/usecases/get_country_covid_case.dart';
 import 'package:covidapp/features/covid_case/presentation/bloc/country_covid_case_bloc/country_covid_case_bloc.dart';
-import 'package:covidapp/features/covid_case/presentation/bloc/global_covid_case_bloc/global_covid_case_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

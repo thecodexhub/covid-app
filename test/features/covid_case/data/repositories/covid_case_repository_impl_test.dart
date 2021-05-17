@@ -156,7 +156,6 @@ void main() {
       totalRecovered: 1,
       updatedAt: 'test',
     );
-    final CovidCase tCovidCase = tCovidCaseModel;
     final tCovidCaseModelList = [tCovidCaseModel];
     final List<CovidCase> tCovidCaseList = tCovidCaseModelList;
     test('should check if the device is online', () async {
