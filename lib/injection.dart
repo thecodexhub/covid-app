@@ -1,3 +1,10 @@
+import 'package:covidapp/features/covid_news/data/datasources/covid_news_local_data_source.dart';
+import 'package:covidapp/features/covid_news/data/datasources/covid_news_remote_data_source.dart';
+import 'package:covidapp/features/covid_news/data/repositories/covid_news_repository_impl.dart';
+import 'package:covidapp/features/covid_news/domain/repositories/covid_news_repository.dart';
+import 'package:covidapp/features/covid_news/domain/usecases/get_global_covid_news.dart';
+import 'package:covidapp/features/covid_news/domain/usecases/get_india_covid_news.dart';
+import 'package:covidapp/features/covid_news/presentation/bloc/covid_news_bloc.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
@@ -16,18 +23,31 @@ import 'features/covid_case/presentation/bloc/global_covid_case_bloc/global_covi
 final g = GetIt.instance;
 
 Future<void> init() async {
-  //! Features - CovidCase
+  //! Features -
   // Register Blocs
   g.registerFactory(() => GlobalCovidCaseBloc(global: g()));
   g.registerFactory(() => CountryCovidCaseBloc(country: g()));
+
+  g.registerFactory(() => CovidNewsBloc(global: g(), india: g()));
 
   // Register Usecases
   g.registerLazySingleton(() => GetGlobalCovidCase(g()));
   g.registerLazySingleton(() => GetCountryCovidCase(g()));
 
+  g.registerLazySingleton(() => GetGlobalCovidNews(g()));
+  g.registerLazySingleton(() => GetIndiaCovidNews(g()));
+
   // Register Repositories
   g.registerLazySingleton<CovidCaseRepository>(
     () => CovidCaseRepositoryImpl(
+      remoteDataSource: g(),
+      localDataSource: g(),
+      networkInfo: g(),
+    ),
+  );
+
+  g.registerLazySingleton<CovidNewsRepository>(
+    () => CovidNewsRepositoryImpl(
       remoteDataSource: g(),
       localDataSource: g(),
       networkInfo: g(),
@@ -40,6 +60,12 @@ Future<void> init() async {
 
   g.registerLazySingleton<CovidCaseLocalDataSource>(
       () => CovidCaseLocalDataSourceImpl(sharedPreferences: g()));
+
+  g.registerLazySingleton<CovidNewsRemoteDataSource>(
+      () => CovidNewsRemoteDataSourceImpl(client: g()));
+
+  g.registerLazySingleton<CovidNewsLocalDataSource>(
+      () => CovidNewsLocalDataSourceImpl(sharedPreferences: g()));
 
   //! Core
   g.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(g()));
