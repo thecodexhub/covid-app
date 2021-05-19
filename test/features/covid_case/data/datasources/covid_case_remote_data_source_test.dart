@@ -43,8 +43,7 @@ void main() {
       // Act
       await remoteDataSourceImpl.getGlobalCovidCase();
       // Assert
-      verify(
-          mockHttpClient.get(Uri.parse('https://api.covid19api.com/summary')));
+      verify(mockHttpClient.get(Uri.parse(URI_FOR_COVID_CASE)));
     });
 
     test('should return a CovidCaseModel when the statusCode is 200', () async {
@@ -78,8 +77,7 @@ void main() {
       // Act
       await remoteDataSourceImpl.getCountryCovidCase();
       // Assert
-      verify(
-          mockHttpClient.get(Uri.parse('https://api.covid19api.com/summary')));
+      verify(mockHttpClient.get(Uri.parse(URI_FOR_COVID_CASE)));
     });
 
     test('should return a list of CovidCaseModel when the statusCode is 200',

@@ -20,15 +20,15 @@ abstract class CovidCaseRemoteDataSource {
   Future<List<CovidCaseModel>> getCountryCovidCase();
 }
 
+const String URI_FOR_COVID_CASE = 'https://api.covid19api.com/summary';
+
 class CovidCaseRemoteDataSourceImpl implements CovidCaseRemoteDataSource {
   CovidCaseRemoteDataSourceImpl({@required this.client});
   final http.Client client;
 
-  final String uri = 'https://api.covid19api.com/summary';
-
   @override
   Future<CovidCaseModel> getGlobalCovidCase() async {
-    final response = await client.get(Uri.parse(uri));
+    final response = await client.get(Uri.parse(URI_FOR_COVID_CASE));
     if (response.statusCode == 200) {
       return CovidCaseModel.fromJson(
           json.decode(response.body)["Global"] as Map<String, dynamic>);
@@ -39,7 +39,7 @@ class CovidCaseRemoteDataSourceImpl implements CovidCaseRemoteDataSource {
 
   @override
   Future<List<CovidCaseModel>> getCountryCovidCase() async {
-    final response = await client.get(Uri.parse(uri));
+    final response = await client.get(Uri.parse(URI_FOR_COVID_CASE));
 
     if (response.statusCode == 200) {
       return List<CovidCaseModel>.from(
