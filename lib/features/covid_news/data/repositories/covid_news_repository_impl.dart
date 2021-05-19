@@ -15,7 +15,7 @@ class CovidNewsRepositoryImpl implements CovidNewsRepository {
     @required this.localDataSource,
     @required this.networkInfo,
   });
-  final CovidNewsRemoteDatasource remoteDataSource;
+  final CovidNewsRemoteDataSource remoteDataSource;
   final CovidNewsLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 

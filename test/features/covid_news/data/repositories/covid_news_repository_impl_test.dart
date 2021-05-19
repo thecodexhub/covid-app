@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class MockCovidNewsRemoteDataSource extends Mock
-    implements CovidNewsRemoteDatasource {}
+    implements CovidNewsRemoteDataSource {}
 
 class MockCovidNewsLocalDataSource extends Mock
     implements CovidNewsLocalDataSource {}

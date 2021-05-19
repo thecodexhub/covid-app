@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import '../models/covid_news_model.dart';
 import 'package:http/http.dart' as http;
 
-abstract class CovidNewsRemoteDatasource {
+abstract class CovidNewsRemoteDataSource {
   /// Calls the https://newsapi.org/v2/{endpoint} api with `top-headlines` endpoint.
   /// Parse the value into `CovidNewsModel`.
   ///
@@ -26,7 +26,7 @@ const String URI_FOR_GLOBAL_NEWS =
 const String URI_FOR_INDIA_NEWS =
     'https://newsapi.org/v2/top-headlines?category=health&apiKey=$NEWS_API_KEY&country=in&language=en&q=covid';
 
-class CovidNewsRemoteDataSourceImpl implements CovidNewsRemoteDatasource {
+class CovidNewsRemoteDataSourceImpl implements CovidNewsRemoteDataSource {
   CovidNewsRemoteDataSourceImpl({@required this.client});
   final http.Client client;
 
