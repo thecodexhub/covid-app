@@ -34,7 +34,7 @@ class CovidNewsRemoteDataSourceImpl implements CovidNewsRemoteDataSource {
   Future<List<CovidNewsModel>> getGlobalCovidNews() async {
     final response = await client.get(Uri.parse(URI_FOR_GLOBAL_NEWS));
     if (response.statusCode == 200) {
-      return List<CovidNewsModel>.from((json.decode(response.body) as List).map(
+      return List<CovidNewsModel>.from((json.decode(response.body)["articles"] as List).map(
           (json) => CovidNewsModel.fromJson(json as Map<String, dynamic>)));
     } else {
       throw ServerException();
@@ -45,7 +45,7 @@ class CovidNewsRemoteDataSourceImpl implements CovidNewsRemoteDataSource {
   Future<List<CovidNewsModel>> getIndiaCovidNews() async {
     final response = await client.get(Uri.parse(URI_FOR_INDIA_NEWS));
     if (response.statusCode == 200) {
-      return List<CovidNewsModel>.from((json.decode(response.body) as List).map(
+      return List<CovidNewsModel>.from((json.decode(response.body)["articles"] as List).map(
           (json) => CovidNewsModel.fromJson(json as Map<String, dynamic>)));
     } else {
       throw ServerException();
