@@ -1,3 +1,4 @@
 export 'loading_widget.dart';
 export 'message_display.dart';
 export 'global_covid_case_display.dart';
+export 'country_covid_case_display.dart';

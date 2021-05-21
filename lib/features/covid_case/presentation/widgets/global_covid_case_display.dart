@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/util/number_formatter.dart';
 import '../../domain/entities/covid_case.dart';
 
-class GlobalCovidCaseDisplay extends StatelessWidget {
+class GlobalCovidCaseDisplay extends StatefulWidget {
   const GlobalCovidCaseDisplay({Key key, @required this.covidCase})
       : super(key: key);
   final CovidCase covidCase;
@@ -13,15 +13,31 @@ class GlobalCovidCaseDisplay extends StatelessWidget {
   static const red = Color(0xFFEF827D);
 
   @override
+  _GlobalCovidCaseDisplayState createState() => _GlobalCovidCaseDisplayState();
+}
+
+class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
+  int activeCase;
+  num activePercentage;
+  num recoveryPercentage;
+  num deathPercentage;
+
+  @override
+  void initState() {
+    super.initState();
+    activeCase = widget.covidCase.totalConfirmed -
+        widget.covidCase.totalRecovered -
+        widget.covidCase.totalDeaths;
+    activePercentage = ((activeCase / widget.covidCase.totalConfirmed) * 100);
+    recoveryPercentage =
+        (widget.covidCase.totalRecovered / widget.covidCase.totalConfirmed) *
+            100;
+    deathPercentage =
+        (widget.covidCase.totalDeaths / widget.covidCase.totalConfirmed) * 100;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final activeCase = covidCase.totalConfirmed -
-        covidCase.totalRecovered -
-        covidCase.totalDeaths;
-    final activePercentage = (activeCase / covidCase.totalConfirmed) * 100;
-    final recoveryPercentage =
-        (covidCase.totalRecovered / covidCase.totalConfirmed) * 100;
-    final deathPercentage =
-        (covidCase.totalDeaths / covidCase.totalConfirmed) * 100;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -37,7 +53,7 @@ class GlobalCovidCaseDisplay extends StatelessWidget {
             ),
             const SizedBox(height: 8.0),
             Text(
-              covidCase.totalConfirmed.formatNumberToString,
+              widget.covidCase.totalConfirmed.formatNumberToString,
               style: Theme.of(context)
                   .textTheme
                   .headline4
@@ -53,21 +69,21 @@ class GlobalCovidCaseDisplay extends StatelessWidget {
                     Expanded(
                       flex: activePercentage.round(),
                       child: Container(
-                        color: purple,
+                        color: GlobalCovidCaseDisplay.purple,
                       ),
                     ),
                     const SizedBox(width: 1.0),
                     Expanded(
                       flex: recoveryPercentage.round(),
                       child: Container(
-                        color: green,
+                        color: GlobalCovidCaseDisplay.green,
                       ),
                     ),
                     const SizedBox(width: 1.0),
                     Expanded(
                       flex: deathPercentage.round(),
                       child: Container(
-                        color: red,
+                        color: GlobalCovidCaseDisplay.red,
                       ),
                     ),
                   ],
@@ -77,26 +93,26 @@ class GlobalCovidCaseDisplay extends StatelessWidget {
             const SizedBox(height: 16.0),
             _buildCaseBlocks(
               context,
-              color: purple,
+              color: GlobalCovidCaseDisplay.purple,
               label: 'Active Cases',
               cases: activeCase,
-              newCases: covidCase.newConfirmed,
+              newCases: widget.covidCase.newConfirmed,
             ),
             const SizedBox(height: 8.0),
             _buildCaseBlocks(
               context,
-              color: green,
+              color: GlobalCovidCaseDisplay.green,
               label: 'Recovered',
-              cases: covidCase.totalRecovered,
-              newCases: covidCase.newRecovered,
+              cases: widget.covidCase.totalRecovered,
+              newCases: widget.covidCase.newRecovered,
             ),
             const SizedBox(height: 8.0),
             _buildCaseBlocks(
               context,
-              color: red,
+              color: GlobalCovidCaseDisplay.red,
               label: 'Deaths',
-              cases: covidCase.totalDeaths,
-              newCases: covidCase.newDeaths,
+              cases: widget.covidCase.totalDeaths,
+              newCases: widget.covidCase.newDeaths,
             ),
             const SizedBox(height: 20.0),
             Text.rich(
