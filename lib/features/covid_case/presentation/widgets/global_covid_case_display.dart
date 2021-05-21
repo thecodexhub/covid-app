@@ -51,21 +51,21 @@ class GlobalCovidCaseDisplay extends StatelessWidget {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: activePercentage.toInt(),
+                      flex: activePercentage.round(),
                       child: Container(
                         color: purple,
                       ),
                     ),
                     const SizedBox(width: 1.0),
                     Expanded(
-                      flex: recoveryPercentage.toInt(),
+                      flex: recoveryPercentage.round(),
                       child: Container(
                         color: green,
                       ),
                     ),
                     const SizedBox(width: 1.0),
                     Expanded(
-                      flex: deathPercentage.toInt(),
+                      flex: deathPercentage.round(),
                       child: Container(
                         color: red,
                       ),

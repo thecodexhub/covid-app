@@ -14,7 +14,7 @@ class LoadingWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Text('Gathering global cases, wait a bit...'),
+            Text('Gathering results, wait a bit...'),
             const SizedBox(height: 12.0),
             CupertinoActivityIndicator(),
           ],
