@@ -23,8 +23,6 @@ dependencies:
   get_it: ^7.1.3
   # Remote API
   http: ^0.13.3
-  # For two or more scrolls in sync
-  linked_scroll_controller: ^0.2.0
   # Local cache
   shared_preferences: ^2.0.5
 
