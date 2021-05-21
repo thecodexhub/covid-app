@@ -1,10 +1,3 @@
-import 'package:covidapp/features/covid_news/data/datasources/covid_news_local_data_source.dart';
-import 'package:covidapp/features/covid_news/data/datasources/covid_news_remote_data_source.dart';
-import 'package:covidapp/features/covid_news/data/repositories/covid_news_repository_impl.dart';
-import 'package:covidapp/features/covid_news/domain/repositories/covid_news_repository.dart';
-import 'package:covidapp/features/covid_news/domain/usecases/get_global_covid_news.dart';
-import 'package:covidapp/features/covid_news/domain/usecases/get_india_covid_news.dart';
-import 'package:covidapp/features/covid_news/presentation/bloc/covid_news_bloc.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
@@ -19,6 +12,13 @@ import 'features/covid_case/domain/usecases/get_country_covid_case.dart';
 import 'features/covid_case/domain/usecases/get_global_covid_case.dart';
 import 'features/covid_case/presentation/bloc/country_covid_case_bloc/country_covid_case_bloc.dart';
 import 'features/covid_case/presentation/bloc/global_covid_case_bloc/global_covid_case_bloc.dart';
+import 'features/covid_news/data/datasources/covid_news_local_data_source.dart';
+import 'features/covid_news/data/datasources/covid_news_remote_data_source.dart';
+import 'features/covid_news/data/repositories/covid_news_repository_impl.dart';
+import 'features/covid_news/domain/repositories/covid_news_repository.dart';
+import 'features/covid_news/domain/usecases/get_global_covid_news.dart';
+import 'features/covid_news/domain/usecases/get_india_covid_news.dart';
+import 'features/covid_news/presentation/bloc/covid_news_bloc.dart';
 
 final g = GetIt.instance;
 
