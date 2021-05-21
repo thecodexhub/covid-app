@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'features/covid_case/presentation/pages/country_covid_case_page.dart';
 import 'features/covid_case/presentation/pages/global_covid_case_page.dart';
+import 'features/covid_news/presentation/pages/global_covid_news_page.dart';
+import 'features/covid_news/presentation/pages/india_covid_news_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -48,11 +51,11 @@ class _HomePageState extends State<HomePage> {
             child: selectedIndex == 0
                 ? segmentedControlGroupValue == 0
                     ? GlobalCovidCasePage()
-                    : Container() // todo: CountryCovidCasePage
+                    : CountryCovidCasePage()
                 : segmentedControlGroupValue == 0
-                    ? Container() // todo: GlobalCovidNewsPage
-                    : Container(),
-          ), // todo: IndiaCovidNewsPage
+                    ? GlobalCovidNewsPage()
+                    : IndiaCovidNewsPage(),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
