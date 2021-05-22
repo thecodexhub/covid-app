@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../app_localizations.dart';
+
 class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class LoadingWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Text('Gathering results, wait a bit...'),
+            Text(AppLocalizations.of(context).translate('loadingMessage')),
             const SizedBox(height: 12.0),
             CupertinoActivityIndicator(),
           ],

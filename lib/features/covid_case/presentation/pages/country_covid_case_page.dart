@@ -1,7 +1,9 @@
-import 'package:covidapp/features/covid_case/presentation/bloc/country_covid_case_bloc/country_covid_case_bloc.dart';
-import 'package:covidapp/features/covid_case/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../app_localizations.dart';
+import '../bloc/country_covid_case_bloc/country_covid_case_bloc.dart';
+import '../widgets/widgets.dart';
 
 class CountryCovidCasePage extends StatefulWidget {
   @override
@@ -51,7 +53,7 @@ class _CountryCovidCasePageState extends State<CountryCovidCasePage> {
 
   Widget _buildHeader(BuildContext context) {
     return Text(
-      'Cases by Country',
+      AppLocalizations.of(context).translate('covidCasesCountryTitle'),
       style: Theme.of(context).textTheme.headline6.copyWith(fontSize: 18.0),
     );
   }

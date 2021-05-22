@@ -1,5 +1,6 @@
-import 'package:covidapp/features/covid_news/domain/entities/covid_news.dart';
 import 'package:flutter/material.dart';
+
+import '../../domain/entities/covid_news.dart';
 
 class CovidNewsDisplay extends StatelessWidget {
   const CovidNewsDisplay({Key key, @required this.covidNews}) : super(key: key);
@@ -81,7 +82,7 @@ class CovidNewsDisplay extends StatelessWidget {
                           ),
                           Text(
                             news.publishedAt.substring(0, 10) +
-                                    ' ' +
+                                    ', ' +
                                     news.publishedAt.substring(11, 16) ??
                                 'Not available',
                             style: Theme.of(context)

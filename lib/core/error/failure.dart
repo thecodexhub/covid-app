@@ -13,10 +13,8 @@ class CacheFailure extends Failure {
   List<Object> get props => [];
 }
 
-const String SERVER_FAILURE_MESSAGE =
-    'Server Failed. Please try again after some time.';
-const String CACHE_FAILURE_MESSAGE =
-    'Failed to show data from Cache. Please turn on your wifi.';
+const String SERVER_FAILURE_MESSAGE = 'serverFailureMessage';
+const String CACHE_FAILURE_MESSAGE = 'cacheFailureMessage';
 
 extension FailureX on Failure {
   String get mapFailureToMessage {
@@ -26,7 +24,7 @@ extension FailureX on Failure {
       case CacheFailure:
         return CACHE_FAILURE_MESSAGE;
       default:
-        return 'Unexpected error. Please try again.';
+        return 'unexpectedFailureMessage';
     }
   }
 }

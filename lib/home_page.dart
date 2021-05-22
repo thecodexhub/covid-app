@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'app_localizations.dart';
 import 'features/covid_case/presentation/pages/country_covid_case_page.dart';
 import 'features/covid_case/presentation/pages/global_covid_case_page.dart';
 import 'features/covid_news/presentation/pages/global_covid_news_page.dart';
@@ -23,8 +24,8 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.0,
         title: Text(
           selectedIndex == 0
-              ? 'COVID-19 Coronavirus Tracker'
-              : 'COVID-19 Latest News',
+              ? AppLocalizations.of(context).translate('covidCasesAppBarTitle')
+              : AppLocalizations.of(context).translate('covidNewsAppBarTitle'),
         ),
         textTheme: Theme.of(context).textTheme,
       ),
@@ -40,10 +41,20 @@ class _HomePageState extends State<HomePage> {
               groupValue: segmentedControlGroupValue,
               padding: EdgeInsets.all(4.0),
               children: <int, Widget>{
-                0: Text(selectedIndex == 0 ? 'Worldwide' : 'Global News'),
-                1: Text(selectedIndex == 0
-                    ? 'Cases by Country'
-                    : 'Covid News - India')
+                0: Text(
+                  selectedIndex == 0
+                      ? AppLocalizations.of(context)
+                          .translate('covidCasesWorldwideTitle')
+                      : AppLocalizations.of(context)
+                          .translate('covidNewsWorldwideTitle'),
+                ),
+                1: Text(
+                  selectedIndex == 0
+                      ? AppLocalizations.of(context)
+                          .translate('covidCasesCountryTitle')
+                      : AppLocalizations.of(context)
+                          .translate('covidNewsIndiaTitle'),
+                )
               },
             ),
           ),
@@ -72,9 +83,13 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.black,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.contactless_outlined), label: 'Cases'),
+            icon: Icon(Icons.contactless_outlined),
+            label: AppLocalizations.of(context).translate('bottomBarCaseTitle'),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.campaign_outlined), label: 'News'),
+            icon: Icon(Icons.campaign_outlined),
+            label: AppLocalizations.of(context).translate('bottomBarNewsTitle'),
+          ),
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app_localizations.dart';
+
 class MessageDisplay extends StatelessWidget {
   const MessageDisplay({Key key, @required this.message}) : super(key: key);
   final String message;
@@ -17,7 +19,7 @@ class MessageDisplay extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              message,
+              AppLocalizations.of(context).translate(message),
               style: Theme.of(context)
                   .textTheme
                   .bodyText1

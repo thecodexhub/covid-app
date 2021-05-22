@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../app_localizations.dart';
 import '../bloc/global_covid_case_bloc/global_covid_case_bloc.dart';
 import '../widgets/widgets.dart';
 
@@ -52,11 +53,14 @@ class _GlobalCovidCasePageState extends State<GlobalCovidCasePage> {
   Widget _buildHeader(BuildContext context) {
     return Text.rich(
       TextSpan(
-        text: 'Coronavirus Cases',
+        text: AppLocalizations.of(context)
+            .translate('covidCasesWorldwideHeading0'),
         style: Theme.of(context).textTheme.headline6.copyWith(fontSize: 18.0),
         children: <TextSpan>[
           TextSpan(
-            text: ' - Worldwide',
+            text: ' - ' +
+                AppLocalizations.of(context)
+                    .translate('covidCasesWorldwideHeading1'),
             style: Theme.of(context).textTheme.headline6.copyWith(
                   fontSize: 15.0,
                   color: Colors.grey.shade600,

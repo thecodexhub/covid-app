@@ -1,7 +1,9 @@
-import 'package:covidapp/core/util/number_formatter.dart';
-import 'package:covidapp/features/covid_case/domain/entities/covid_case.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../app_localizations.dart';
+import '../../../../core/util/number_formatter.dart';
+import '../../domain/entities/covid_case.dart';
 
 class CountryCovidCaseDisplay extends StatefulWidget {
   const CountryCovidCaseDisplay({Key key, @required this.covidCaseList})
@@ -61,15 +63,17 @@ class _CountryCovidCaseDisplayState extends State<CountryCovidCaseDisplay> {
             children: <int, Widget>{
               0: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                child: Text('Active'),
+                child:
+                    Text(AppLocalizations.of(context).translate('activeCases')),
               ),
               1: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                child: Text('Recovered'),
+                child:
+                    Text(AppLocalizations.of(context).translate('recovered')),
               ),
               2: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-                child: Text('Deaths'),
+                child: Text(AppLocalizations.of(context).translate('deaths')),
               ),
             },
           ),
@@ -78,10 +82,14 @@ class _CountryCovidCaseDisplayState extends State<CountryCovidCaseDisplay> {
         Align(
           alignment: Alignment.topLeft,
           child: Text(
-            'Last updated on ' +
+            AppLocalizations.of(context).translate('updatedAtText') +
+                ' ' +
                 widget.covidCaseList[0].updatedAt.substring(0, 10) +
-                ' at ' +
-                widget.covidCaseList[0].updatedAt.substring(11, 16),
+                ', ' +
+                AppLocalizations.of(context).translate('timePrefixText') +
+                widget.covidCaseList[0].updatedAt.substring(11, 16) +
+                ' ' +
+                AppLocalizations.of(context).translate('timeSuffixText'),
           ),
         ),
         const SizedBox(height: 16.0),

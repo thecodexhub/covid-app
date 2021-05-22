@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../app_localizations.dart';
 import '../../../../core/util/number_formatter.dart';
 import '../../domain/entities/covid_case.dart';
 
@@ -45,7 +46,8 @@ class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Total Confirmed Cases'.toUpperCase(),
+              AppLocalizations.of(context)
+                  .translate('covidCasesWorldwideCardHeading'),
               style: Theme.of(context)
                   .textTheme
                   .bodyText1
@@ -94,7 +96,7 @@ class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
             _buildCaseBlocks(
               context,
               color: GlobalCovidCaseDisplay.purple,
-              label: 'Active Cases',
+              label: AppLocalizations.of(context).translate('activeCases'),
               cases: activeCase,
               newCases: widget.covidCase.newConfirmed,
             ),
@@ -102,7 +104,7 @@ class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
             _buildCaseBlocks(
               context,
               color: GlobalCovidCaseDisplay.green,
-              label: 'Recovered',
+              label: AppLocalizations.of(context).translate('recovered'),
               cases: widget.covidCase.totalRecovered,
               newCases: widget.covidCase.newRecovered,
             ),
@@ -110,43 +112,57 @@ class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
             _buildCaseBlocks(
               context,
               color: GlobalCovidCaseDisplay.red,
-              label: 'Deaths',
+              label: AppLocalizations.of(context).translate('deaths'),
               cases: widget.covidCase.totalDeaths,
               newCases: widget.covidCase.newDeaths,
             ),
             const SizedBox(height: 20.0),
             Text.rich(
               TextSpan(
-                text: 'The ratio of ',
+                text:
+                    AppLocalizations.of(context).translate('ratioText0') + ' ',
                 style: Theme.of(context)
                     .textTheme
                     .bodyText2
                     .copyWith(fontSize: 15),
                 children: <TextSpan>[
                   TextSpan(
-                    text:
-                        'Recovery (${recoveryPercentage.toStringAsFixed(1)}%)',
+                    text: AppLocalizations.of(context).translate('ratioText1') +
+                        ' (${recoveryPercentage.toStringAsFixed(1)}%)',
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2
                         .copyWith(fontSize: 15, color: Colors.blue.shade700),
                   ),
-                  TextSpan(text: ' & '),
                   TextSpan(
-                    text: 'Deaths (${deathPercentage.toStringAsFixed(1)}%)',
+                      text: ' ' +
+                          AppLocalizations.of(context).translate('ratioText2') +
+                          ' '),
+                  TextSpan(
+                    text: AppLocalizations.of(context).translate('ratioText3') +
+                        ' (${deathPercentage.toStringAsFixed(1)}%)',
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2
                         .copyWith(fontSize: 15, color: Colors.blue.shade700),
                   ),
-                  TextSpan(text: ' globally.'),
+                  TextSpan(
+                      text: ' ' +
+                          AppLocalizations.of(context).translate('ratioText4')),
                 ],
               ),
             ),
             const SizedBox(height: 20.0),
-            Text('Last updated on ' + widget.covidCase.updatedAt.substring(0, 10) +
-                ' at ' +
-                widget.covidCase.updatedAt.substring(11, 16))
+            Text(
+              AppLocalizations.of(context).translate('updatedAtText') +
+                  ' ' +
+                  widget.covidCase.updatedAt.substring(0, 10) +
+                  ', ' +
+                  AppLocalizations.of(context).translate('timePrefixText') +
+                  widget.covidCase.updatedAt.substring(11, 16) +
+                  ' ' +
+                  AppLocalizations.of(context).translate('timeSuffixText'),
+            )
           ],
         ),
       ),
