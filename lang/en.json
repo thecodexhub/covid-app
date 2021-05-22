@@ -1,0 +1,36 @@
+{
+  "bottomBarCaseTitle": "Cases",
+  "bottomBarNewsTitle": "News",
+
+  "covidCasesAppBarTitle": "COVID-19 Coronavirus Tracker",
+  "covidCasesWorldwideTitle": "Worldwide",
+  "covidCasesCountryTitle": "Cases by Contry",
+
+  "covidCasesWorldwideHeading0": "Coronavirus Cases",
+  "covidCasesWorldwideHeading1": "Worldwide",
+
+  "loadingMessage": "Getting results, wait a bit...",
+
+  "covidCasesWorldwideCardHeading": "TOTAL CONFIRMED CASES",
+  "activeCases": "Active Cases",
+  "recovered": "Recovered",
+  "deaths": "Deaths",
+
+  "ratioText0": "The ratio of",
+  "ratioText1": "Recovery",
+  "ratioText2": "&",
+  "ratioText3": "Deaths",
+  "ratioText4": "globally",
+
+  "updatedAtText": "Last updated on",
+  "timePrefixText": "at",
+  "timeSuffixText": "",
+
+  "covidNewsAppBarTitle": "COVID-19 Latest News",
+  "covidNewsWorldwideTitle": "Global News",
+  "covidNewsIndiaTitle": "Covid News - India",
+
+  "serverFailureMessage": "Server Failed. Please try again after some time.",
+  "cacheFailureMessage": "Failed to show data from Cache. Please turn on your wifi.",
+  "unexpectedFailureMessage": "Unexpected error. Please try again."
+}

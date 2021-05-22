@@ -1,0 +1,36 @@
+{
+  "bottomBarCaseTitle": "मामलों",
+  "bottomBarNewsTitle": "समाचार",
+
+  "covidCasesAppBarTitle": "COVID-19 कोरोनावायरस ट्रैकर",
+  "covidCasesWorldwideTitle": "दुनिया भर",
+  "covidCasesCountryTitle": "देश के अनुसार मामलों",
+
+  "covidCasesWorldwideHeading0": "कोरोनावाइरस के केस",
+  "covidCasesWorldwideHeading1": "दुनिया भर",
+
+  "loadingMessage": "नतीजे आ रहे हैं, थोड़ा इंतजार करें...",
+
+  "covidCasesWorldwideCardHeading": "कुल पुष्ट मामले",
+  "activeCases": "सक्रिय मामले",
+  "recovered": "स्वस्थ हुए",
+  "deaths": "मृत",
+
+  "ratioText0": "विश्व स्तर पर",
+  "ratioText1": "स्वास्थ्य लाभ",
+  "ratioText2": "और",
+  "ratioText3": "मौतों",
+  "ratioText4": "का अनुपात।",
+
+  "updatedAtText": "पिछला नवीनीकरण",
+  "timePrefixText": "",
+  "timeSuffixText": "पर",
+
+  "covidNewsAppBarTitle": "COVID-19 अधुनातन समाचार",
+  "covidNewsWorldwideTitle": "विश्व समाचार",
+  "covidNewsIndiaTitle": "कोविड समाचार - भारत",
+
+  "serverFailureMessage": "सर्वर विफल। कृपया कुछ समय बाद पुन: प्रयास करें।",
+  "cacheFailureMessage": "कैश से डेटा दिखाने में विफल। कृपया अपना वाईफाई चालू करें।",
+  "unexpectedFailureMessage": "अप्रत्याशित त्रुटि। कृपया पुन: प्रयास करें।"
+}
