@@ -23,6 +23,7 @@ class _CountryCovidCasePageState extends State<CountryCovidCasePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(height: 10.0),
           _buildHeader(context),
           const SizedBox(height: 16.0),
           Expanded(

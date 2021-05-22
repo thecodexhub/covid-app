@@ -143,6 +143,10 @@ class _GlobalCovidCaseDisplayState extends State<GlobalCovidCaseDisplay> {
                 ],
               ),
             ),
+            const SizedBox(height: 20.0),
+            Text('Last updated on ' + widget.covidCase.updatedAt.substring(0, 10) +
+                ' at ' +
+                widget.covidCase.updatedAt.substring(11, 16))
           ],
         ),
       ),

@@ -75,6 +75,16 @@ class _CountryCovidCaseDisplayState extends State<CountryCovidCaseDisplay> {
           ),
         ),
         const SizedBox(height: 16.0),
+        Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            'Last updated on ' +
+                widget.covidCaseList[0].updatedAt.substring(0, 10) +
+                ' at ' +
+                widget.covidCaseList[0].updatedAt.substring(11, 16),
+          ),
+        ),
+        const SizedBox(height: 16.0),
         Expanded(
           child: Card(
             child: Padding(
@@ -114,17 +124,16 @@ class _CountryCovidCaseDisplayState extends State<CountryCovidCaseDisplay> {
           ),
           const SizedBox(width: 8.0),
           Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  '+' + getNewCase(value, country),
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2
-                      .copyWith(fontSize: 13.0, color: Colors.grey.shade700),
+                  '+ ' + getNewCase(value, country),
+                  style: Theme.of(context).textTheme.bodyText2.copyWith(
+                      fontSize: 13.0,
+                      color: getSelectedColor(value).withAlpha(240)),
                 ),
-                const SizedBox(width: 8.0),
+                const SizedBox(height: 1.5),
                 Text(
                   getTotalCase(value, country),
                   style: Theme.of(context)
