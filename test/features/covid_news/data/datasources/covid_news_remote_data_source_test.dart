@@ -34,7 +34,7 @@ void main() {
 
   group('getGlobalCovidNews', () {
     final tCovidNewsModelList = List<CovidNewsModel>.from(
-        (json.decode(fixture('fixture_api_news.json')) as List)
+        (json.decode(fixture('fixture_api_news.json'))["articles"] as List)
             .map((e) => CovidNewsModel.fromJson(e as Map<String, dynamic>)));
     test('should perform a GET request on a global covid news URL', () async {
       // Arrange
@@ -68,7 +68,7 @@ void main() {
 
   group('getIndiaCovidNews', () {
     final tCovidNewsModelList = List<CovidNewsModel>.from(
-        (json.decode(fixture('fixture_api_news.json')) as List)
+        (json.decode(fixture('fixture_api_news.json'))["articles"] as List)
             .map((e) => CovidNewsModel.fromJson(e as Map<String, dynamic>)));
     test('should perform a GET request on a india covid news URL', () async {
       // Arrange

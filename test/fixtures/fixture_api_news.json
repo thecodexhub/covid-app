@@ -1,4 +1,7 @@
-[
+{
+  "status": "ok",
+  "totalResults": 1,
+  "articles": [
     {
       "source": {
         "name": "test"
@@ -22,4 +25,4 @@
       "publishedAt": "test"
     }
   ]
-  
+}
