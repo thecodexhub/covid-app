@@ -46,4 +46,8 @@ jobs:
           flutter-version: '2.0.5'
       - run: flutter pub get
       - run: flutter clean
+      - run: |
+          touch lib/api_key.dart
+          echo $NEWS_API_KEY >> lib/api_key.dart
+          cat  lib/api_key.dart
       - run: flutter build appbundle
