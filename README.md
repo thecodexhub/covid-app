@@ -76,8 +76,13 @@ Additional documentations that might help
 
 ## TODO
 
+- [ ] Web version
 - [ ] Full test coverage including Integration Test
 - [ ] Improve Documentation
+
+## Contribution
+
+Do not hesitate to raise an issue or contribute to it, or suggest changes in the codebase. Opinions are highly appreciated!
 
 ## License
 
