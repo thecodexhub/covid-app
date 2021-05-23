@@ -1,16 +1,19 @@
 # Covid App
 
-COVID-19 application made with Flutter, following Test Driven Development (TDD) and Clean Architecture.
+COVID-19 application made with Flutter, following Test Driven Development (TDD) and Clean Architecture along with Internationalization with JSON and CI/CD workflow.
 
 ## Features:
 
 Ths project has several features:
 
 - Fetch Covid cases and latest news related to COVID-19 from APIs.
+- Cache data in local storage, use when no internet connection is available.
+- Error handling for Server failure and Cache failure.
+- Flutter Bloc state management.
 - Test Driven Development (TDD).
 - Follow ResoCoder's Clean Architecture. For details, click [here](https://resocoder.com/flutter-clean-architecture-tdd/).
-- Internationalization with JSON for two locale values - `en` and `hi`.
-- CI/CD pipeline with Github actions.
+- Internationalization with JSON for two locale values - `en-US` and `hi-IN`.
+- CI/CD workflow with Github actions and secrets.
 
 ## Preview:
 
@@ -65,7 +68,7 @@ Learn Test Driven Development and Clean Architecture
 
 - [https://resocoder.com/flutter-clean-architecture-tdd](https://resocoder.com/flutter-clean-architecture-tdd/)
 
-Additional good tutorials and documentations that might help
+Additional documentations that might help
 
 - Internationalizing Flutter apps: [https://flutter.dev/docs/development/accessibility-and-localization/internationalization](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
 - CI & CD with Flutter: [https://flutter.dev/docs/deployment/cd](https://flutter.dev/docs/deployment/cd)
@@ -86,4 +89,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## If you like this repository then kindly give it a star ⭐
+### If you like this repository, kindly give it a star ⭐
